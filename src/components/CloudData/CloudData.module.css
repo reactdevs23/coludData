@@ -1,0 +1,137 @@
+.wrapper {
+  background: var(--secondaryColor);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1),
+    0 8px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}
+
+.title {
+  color: var(--primaryColor);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+
+  text-align: left;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cricleContainer {
+  position: relative;
+
+  border: 1px dashed var(--primaryColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+  z-index: 1;
+}
+.cricleContainer::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  border: 1px dashed var(--primaryColor);
+  opacity: 0.8;
+  right: 3px;
+  top: 30%;
+  transform: skewY(-20deg) translateX(90%);
+  z-index: -1;
+}
+.cricleContainer::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  border: 1px dashed var(--primaryColor);
+  opacity: 0.8;
+
+  right: 3px;
+  bottom: 30%;
+  transform: skewY(20deg) translateX(90%);
+  z-index: -1;
+}
+
+.centerImage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100px;
+}
+
+.orbit .center-image {
+  width: var(--size);
+  position: relative;
+  z-index: 10;
+}
+
+.orbit .center-image img {
+  position: absolute;
+  transition: opacity 500ms;
+}
+
+.orbit ul {
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  list-style: none;
+  transform-origin: center;
+}
+
+.orbit li {
+  position: absolute;
+  width: 3.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+/* Dynamically set styles based on index */
+
+.orbit li > * {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  position: absolute;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  position: absolute;
+  background: var(--secondaryColor);
+  border: 1px solid var(--primaryColor);
+}
+.imageContainer img {
+  width: 1.5rem;
+}
+@keyframes throb {
+  100% {
+    scale: 1.05;
+  }
+}
+
+.imgContainer {
+  background: #000;
+}
