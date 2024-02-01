@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./CloudData.module.css";
 
-const CloudData = ({ images, centerImage, title }) => {
+const CloudData = ({
+  images,
+  centerImage,
+  title,
+  circleBorderWidth,
+  lineBorderWidth,
+}) => {
   const calculatePosition = (index, totalImages, radius) => {
     const angle = (360 / totalImages) * index;
     const x = radius * Math.cos((angle * Math.PI) / 180);
@@ -13,7 +19,13 @@ const CloudData = ({ images, centerImage, title }) => {
   const radius = circleSize / 2;
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{
+        "--circleBorderWidth": circleBorderWidth,
+        "--lineBorderWidth": lineBorderWidth,
+      }}
+    >
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.container}>
         <div

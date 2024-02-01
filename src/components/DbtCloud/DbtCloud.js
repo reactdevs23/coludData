@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./DbtCloud.module.css";
 
-const DbtCloud = ({ heading, title, data, buttonText }) => {
+const DbtCloud = ({ heading, title, data, buttonText, borderWidth }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{ "--borderWidth": borderWidth }}>
       {" "}
       <h3 className={styles.heading}>{heading}</h3>
       <div className={styles.infoWrapper}>
